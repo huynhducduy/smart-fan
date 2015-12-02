@@ -12,7 +12,7 @@ Nước ta có khí hậu khắc nghiệt, thường xuyên thay đổi, gây kh
 
 Các hình ảnh liên quan khác của sản phẩm có thể xem thêm ở: [Quạt thông minh's Imgur](http://imgur.com/a/tZUFA)
 
-Thuyết minh chi tiết có thể xem ở: [Quạt thông minh's Drive](https://drive.google.com/file/d/0B1lZQd8-Yga_WmtTem8xbkQ3WW8)
+Thuyết minh chi tiết có thể xem ở: [Quạt thông minh's Drive](https://drive.google.com/file/d/0B1lZQd8-Yga_NTBJVVJTdGotNWs/view)
 
 ## Mô tả
 
