@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Smart-fan by h2dvnnet</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Smart-fan</h1>
-      <h2 class="project-tagline">Quạt thông minh - Dự án tham gia cuộc thi Sáng tạo khoa học kỹ thuật - ViSEF</h2>
-      <a href="https://github.com/h2dvnnet/smart-fan" class="btn">View on GitHub</a>
-      <a href="https://github.com/h2dvnnet/smart-fan/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/h2dvnnet/smart-fan/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<html>
 
-    <section class="main-content">
-      <h1>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Smart-fan : Quạt thông minh - Dự án tham gia cuộc thi Sáng tạo khoa học kỹ thuật - ViSEF">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Smart-fan</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/h2dvnnet/smart-fan">View on GitHub</a>
+
+          <h1 id="project_title">Smart-fan</h1>
+          <h2 id="project_tagline">Quạt thông minh - Dự án tham gia cuộc thi Sáng tạo khoa học kỹ thuật - ViSEF</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/h2dvnnet/smart-fan/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/h2dvnnet/smart-fan/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
 <a id="quạt-thông-minh" class="anchor" href="#qu%E1%BA%A1t-th%C3%B4ng-minh" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quạt thông minh</h1>
 
 <p><strong>Quạt thông minh</strong> là dự án tham gia cuộc thi <strong>Sáng tạo khoa học kỹ thuật - ViSEF</strong> do nhóm tác giả: <strong><em>Huỳnh Đức Duy, Nguyễn Hà Sinh</em></strong> - học sinh lớp <strong><em>11A5 trường THPT Chuyên Lê Quý Đôn, Đà Nẵng</em></strong> thực hiện</p>
@@ -55,49 +67,38 @@
 <a id="thành-phần" class="anchor" href="#th%C3%A0nh-ph%E1%BA%A7n" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thành phần</h2>
 
 <ul>
-<li>Bo mạch Intel Galileo Gen 1</li>
 <li>Bo mạch Arduino Uno R3</li>
 <li>5 cảm biến chuyển động PIR HR501</li>
 <li>Màn hình Lcd kích thước 20x4 với mạch giao tiếp i2c</li>
 <li>Bộ mạch 4 nút nhấn</li>
 <li>4 Relay</li>
 <li>Cảm biến nhiệt độ - độ ẩm DHT11</li>
+<li>Động cơ Servo MG996R</li>
 <li>Động cơ DC cùng bộ nguồn (cuộn chạy – cuộn đề) – tụ điện</li>
 <li>Động cơ phun sương (từ động cơ bơm bồ cá)</li>
 <li>Đèn led thu hồng ngoại – Điều khiển từ xa hồng ngoại</li>
 <li>Còi</li>
 <li>Khung quạt</li>
+<li>Biến áp, tụ điện, điện trở, đi-ốt</li>
 </ul>
 
 <h2>
 <a id="cách-thức-hoạt-động" class="anchor" href="#c%C3%A1ch-th%E1%BB%A9c-ho%E1%BA%A1t-%C4%91%E1%BB%99ng" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cách thức hoạt động</h2>
 
-<p>Quạt sử dụng song song 2 bo mạch Galileo và Arduino Uno R3, gửi và nhận thông tin thông qua chuẩn giao tiếp i2c, nhiệm vụ đảm nhận của 2 bo như sau:</p>
-
-<h4>
-<a id="arduino" class="anchor" href="#arduino" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arduino</h4>
+<p>Quạt sử dụng board Arduino Uno R3 kết hợp với các với các linh kiện, nguyên lý hoạt động như sau</p>
 
 <ul>
-<li>Nhận tín hiệu từ cảm biến nhiệt độ - độ ẩm DHT11</li>
-<li>Nhận tín hiệu từ điều khiển hồng ngoại thông qua đèn Led nhận hồng ngoại </li>
-<li>Nhận tín hiệu vị trí từ Galileo, điều khiển động cơ Servo</li>
-<li>Gửi dữ liệu nhiệt độ, độ ẩm và hồng ngoại đến bo mạch Galileo</li>
+<li>  Nhận tín hiệu từ cảm biến nhiệt độ - độ ẩm DHT11</li>
+<li>  Nhận tín hiệu từ điều khiển hồng ngoại thông qua đèn Led nhận hồng ngoại</li>
+<li>  Nhận tín hiệu từ 5 cảm biến chuyển động</li>
+<li>  Nhận dữ liệu từ các nút nhấn</li>
+<li>  Điều khiển 4 Relay</li>
+<li>  Điều khiển màn hình LCD qua giao tiếp i2c</li>
+<li>  Điều khiển còi</li>
+<li>  Điều khiển động cơ Servo</li>
 </ul>
 
-<h4>
-<a id="galileo" class="anchor" href="#galileo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Galileo</h4>
-
-<ul>
-<li>Nhận tín hiệu từ 5 cảm biến chuyển động</li>
-<li>Nhận dữ liệu nhiệt độ, độ ẩm và hồng ngoại từ Arduino </li>
-<li>Nhận dữ liệu từ các nút nhấn</li>
-<li>Điều khiển 4 Relay</li>
-<li>Điều khiển màn hình LCD qua giao tiếp i2c</li>
-<li>Điều khiển còi</li>
-<li>Gửi dữ liệu về góc quay của động cơ Servo (phân tích từ dữ liệu của cảm biến chuyển động) và tốc độ quay của Servo cho Arduino</li>
-</ul>
-
-<p><img src="http://i.imgur.com/tFES6RP.png" alt="Sơ đồ nguyên lý"></p>
+<p><img src="http://i.imgur.com/iVyYMfP.png" alt="Sơ đồ hoạt động của quạt"></p>
 
 <h2>
 <a id="hướng-dẫn-cài-đặt-và-sử-dụng" class="anchor" href="#h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A0i-%C4%91%E1%BA%B7t-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hướng dẫn cài đặt và sử dụng</h2>
@@ -116,37 +117,43 @@
 <li>Màn hình khởi động: Màn hình chờ của quạt hiển thị trong thời gian chờ bo mạch Galileo khởi động để quạt có thể chạy</li>
 </ul>
 
-<p><img src="http://i.imgur.com/ur58yK9.jpg" alt="Màn hình khởi động"></p>
+<p><img src="http://i.imgur.com/fnTVHnK.jpg" alt="Màn hình khởi động"></p>
 
 <ul>
 <li>Trang chủ giao diện: Gồm 4 dòng: 3 dòng đầu, các lựa chọn để vào các phần cài đặt riêng biệt của quạt, dòng dưới cùng hiển thị các thông tin hiện tại: Nhiệt độ, Độ ẩm, Số quạt, Tình trạng phun sương</li>
 </ul>
 
-<p><img src="http://i.imgur.com/8G8UcvV.jpg" alt="Trang chủ giao diện"></p>
+<p><img src="http://i.imgur.com/R5Eub9W.jpg" alt="Trang chủ giao diện"></p>
 
 <ul>
 <li>Trang cài đặt quay quạt: Có 3 cài đặt cho người dùng: Bật/Tắt chức năng tự động, quay với cài đặt bằng tay (với 2 tọa độ đầu và cuối), và tốc độ quay (thời gian trễ giữa các độ quay – tính bằng ms)</li>
 </ul>
 
-<p><img src="http://i.imgur.com/A3QEdc9.jpg" alt="Trang cài đặt quay quạt"></p>
+<p><img src="http://i.imgur.com/ZjSyqhB.jpg" alt="Trang cài đặt quay quạt"></p>
 
 <ul>
 <li>Trang cài đặt công suất: Có 3 mục cho người dùng: Bật/Tắt chức năng tự động, cài đặt nhiệt độ tương ứng với công suất (trỏ về trang &lt;cài đặt nhiệt độ), và cài đặt công suất theo người dùng</li>
 </ul>
 
-<p><img src="http://i.imgur.com/Ip5CaB3.jpg" alt="Trang cài đặt công suất"></p>
+<p><img src="http://i.imgur.com/cyLh3sk.jpg" alt="Trang cài đặt công suất"></p>
+
+<ul>
+<li>Trang cài đặt thời gian: Phần tiếp theo của cài đặt công suất: Hẹn giờ bật/tắt quạt</li>
+</ul>
+
+<p><img src="http://i.imgur.com/ovWQ4Sc.jpg" alt="Trang cài đặt thời gian"></p>
 
 <ul>
 <li>Trang cài đặt nhiệt độ (Trỏ từ trang cài đặt công suất): Với các cài đặt tương ứng với 3 số của quạt</li>
 </ul>
 
-<p><img src="http://i.imgur.com/1FkVDAC.jpg" alt="Trang cài đặt nhiệt độ"></p>
+<p><img src="http://i.imgur.com/VzUeIhd.jpg" alt="Trang cài đặt nhiệt độ"></p>
 
 <ul>
 <li>Trang cài đặt phun sương: Cũng có 3 cài đặt: Bật/Tắt chức năng tự động, cài đặt độ ẩm (tính bằng % - nếu dưới mức này thì sẽ tự động kích hoạt phun sương), hoặc điều khiển hệ thông phun sương bằng tay</li>
 </ul>
 
-<p><img src="http://i.imgur.com/csiaPKL.jpg" alt="Trang cài đặt phun sương"></p>
+<p><img src="http://i.imgur.com/lE5dk51.jpg" alt="Trang cài đặt phun sương"></p>
 
 <p>Ở trang chủ, dùng nút <strong><code>lên</code></strong> / <strong><code>xuống</code></strong> để chuyển giữa các phần, <strong><code>chọn</code></strong> để truy cập.
 Ở các trang cài đặt, dùng <strong><code>lên</code></strong> / <strong><code>xuống</code></strong> để chuyển giữa các cài đặt, sau đó <strong><code>chọn</code></strong> để truy cập cài đặt sau đó tiếp tục dùng <strong><code>lên</code></strong> / <strong><code>xuống</code></strong> để thay đổi giá trị, sau đó <strong><code>quay lại</code></strong> để trở về.</p>
@@ -219,19 +226,21 @@
 <h1>
 <a id="chú-thích-thư-mục" class="anchor" href="#ch%C3%BA-th%C3%ADch-th%C6%B0-m%E1%BB%A5c" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chú thích thư mục</h1>
 
-<p><code>Ard</code> : Mã nguồn của bo mạch Arduino Uno R3
-<code>Gal</code>: Mã nguồn của bo mạch Galileo
+<p><code>board</code> : Mã nguồn của bo mạch Arduino Uno R3
 <code>libraries</code> : Các thư viện ngoài được sử dụng
 <code>test</code> : Các đoạn mã dùng để kiểm tra tình trạng của từng thành phần trong sản phẩm</p>
+      </section>
+    </div>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/h2dvnnet/smart-fan">Smart-fan</a> is maintained by <a href="https://github.com/h2dvnnet">h2dvnnet</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Smart-fan maintained by <a href="https://github.com/h2dvnnet">h2dvnnet</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
+    </div>
 
-    </section>
+    
 
-  
   </body>
 </html>
