@@ -1,4 +1,4 @@
-#define relayPin1 A1
+#define relayPin1 A0
 void setup()
 {
   pinMode(relayPin1,OUTPUT);

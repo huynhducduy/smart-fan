@@ -26,39 +26,34 @@ Thuyết minh chi tiết có thể xem ở: [Quạt thông minh's Drive](https:/
 
 ## Thành phần
 
-* Bo mạch Intel Galileo Gen 1
 * Bo mạch Arduino Uno R3
 * 5 cảm biến chuyển động PIR HR501
 * Màn hình Lcd kích thước 20x4 với mạch giao tiếp i2c
 * Bộ mạch 4 nút nhấn
 * 4 Relay
 * Cảm biến nhiệt độ - độ ẩm DHT11
+* Động cơ Servo MG996R
 * Động cơ DC cùng bộ nguồn (cuộn chạy – cuộn đề) – tụ điện
 * Động cơ phun sương (từ động cơ bơm bồ cá)
 * Đèn led thu hồng ngoại – Điều khiển từ xa hồng ngoại
 * Còi
 * Khung quạt
+* Biến áp, tụ điện, điện trở, đi-ốt
 
 ## Cách thức hoạt động
 
-Quạt sử dụng song song 2 bo mạch Galileo và Arduino Uno R3, gửi và nhận thông tin thông qua chuẩn giao tiếp i2c, nhiệm vụ đảm nhận của 2 bo như sau:
+Quạt sử dụng board Arduino Uno R3 kết hợp với các với các linh kiện, nguyên lý hoạt động như sau
 
-#### Arduino
-  * Nhận tín hiệu từ cảm biến nhiệt độ - độ ẩm DHT11
-  * Nhận tín hiệu từ điều khiển hồng ngoại thông qua đèn Led nhận hồng ngoại 
-  * Nhận tín hiệu vị trí từ Galileo, điều khiển động cơ Servo
-  * Gửi dữ liệu nhiệt độ, độ ẩm và hồng ngoại đến bo mạch Galileo
+-	Nhận tín hiệu từ cảm biến nhiệt độ - độ ẩm DHT11
+-	Nhận tín hiệu từ điều khiển hồng ngoại thông qua đèn Led nhận hồng ngoại
+-	Nhận tín hiệu từ 5 cảm biến chuyển động
+-	Nhận dữ liệu từ các nút nhấn
+-	Điều khiển 4 Relay
+-	Điều khiển màn hình LCD qua giao tiếp i2c
+-	Điều khiển còi
+-	Điều khiển động cơ Servo
 
-#### Galileo
-  * Nhận tín hiệu từ 5 cảm biến chuyển động
-  * Nhận dữ liệu nhiệt độ, độ ẩm và hồng ngoại từ Arduino 
-  * Nhận dữ liệu từ các nút nhấn
-  * Điều khiển 4 Relay
-  * Điều khiển màn hình LCD qua giao tiếp i2c
-  * Điều khiển còi
-  * Gửi dữ liệu về góc quay của động cơ Servo (phân tích từ dữ liệu của cảm biến chuyển động) và tốc độ quay của Servo cho Arduino
-
-![Sơ đồ nguyên lý](http://i.imgur.com/tFES6RP.png)
+![Sơ đồ hoạt động của quạt](http://i.imgur.com/iVyYMfP.png)
 
 ## Hướng dẫn cài đặt và sử dụng
 
@@ -71,27 +66,36 @@ Là một sản phẩm được tạo ra nhằm giúp thuận tiện cho hoạt 
 Người dùng sẽ sử dụng 4 nút nhấn phía dưới màn hình LCD của quạt (Chọn – Lên – Xuống – Quay lại) để điều khiển con trỏ và thay đổi các thông tin cài đặt của quạt.
 * Màn hình khởi động: Màn hình chờ của quạt hiển thị trong thời gian chờ bo mạch Galileo khởi động để quạt có thể chạy
 
-![Màn hình khởi động](http://i.imgur.com/ur58yK9.jpg)
+![Màn hình khởi động](http://i.imgur.com/fnTVHnK.jpg)
+
 
 * Trang chủ giao diện: Gồm 4 dòng: 3 dòng đầu, các lựa chọn để vào các phần cài đặt riêng biệt của quạt, dòng dưới cùng hiển thị các thông tin hiện tại: Nhiệt độ, Độ ẩm, Số quạt, Tình trạng phun sương
 
-![Trang chủ giao diện](http://i.imgur.com/8G8UcvV.jpg)
+![Trang chủ giao diện](http://i.imgur.com/R5Eub9W.jpg)
+
 
 * Trang cài đặt quay quạt: Có 3 cài đặt cho người dùng: Bật/Tắt chức năng tự động, quay với cài đặt bằng tay (với 2 tọa độ đầu và cuối), và tốc độ quay (thời gian trễ giữa các độ quay – tính bằng ms)
 
-![Trang cài đặt quay quạt](http://i.imgur.com/A3QEdc9.jpg)
+![Trang cài đặt quay quạt](http://i.imgur.com/ZjSyqhB.jpg)
+
 
 * Trang cài đặt công suất: Có 3 mục cho người dùng: Bật/Tắt chức năng tự động, cài đặt nhiệt độ tương ứng với công suất (trỏ về trang <cài đặt nhiệt độ), và cài đặt công suất theo người dùng
 
-![Trang cài đặt công suất](http://i.imgur.com/Ip5CaB3.jpg)
+![Trang cài đặt công suất](http://i.imgur.com/cyLh3sk.jpg)
+
+* Trang cài đặt thời gian: Phần tiếp theo của cài đặt công suất: Hẹn giờ bật/tắt quạt
+
+![Trang cài đặt thời gian](http://i.imgur.com/ovWQ4Sc.jpg)
 
 * Trang cài đặt nhiệt độ (Trỏ từ trang cài đặt công suất): Với các cài đặt tương ứng với 3 số của quạt
 
-![Trang cài đặt nhiệt độ](http://i.imgur.com/1FkVDAC.jpg)
+![Trang cài đặt nhiệt độ](http://i.imgur.com/VzUeIhd.jpg)
+
 
 * Trang cài đặt phun sương: Cũng có 3 cài đặt: Bật/Tắt chức năng tự động, cài đặt độ ẩm (tính bằng % - nếu dưới mức này thì sẽ tự động kích hoạt phun sương), hoặc điều khiển hệ thông phun sương bằng tay
 
-![Trang cài đặt phun sương](http://i.imgur.com/csiaPKL.jpg)
+![Trang cài đặt phun sương](http://i.imgur.com/lE5dk51.jpg)
+
 
 Ở trang chủ, dùng nút **`lên`** / **`xuống`** để chuyển giữa các phần, **`chọn`** để truy cập.
 Ở các trang cài đặt, dùng **`lên`** / **`xuống`** để chuyển giữa các cài đặt, sau đó **`chọn`** để truy cập cài đặt sau đó tiếp tục dùng **`lên`** / **`xuống`** để thay đổi giá trị, sau đó **`quay lại`** để trở về.
@@ -120,7 +124,6 @@ Trong tương lai nhóm sẽ khắc phục tất cả những mặt tồn tại 
 
 # Chú thích thư mục
 
-```Ard``` : Mã nguồn của bo mạch Arduino Uno R3
-```Gal```: Mã nguồn của bo mạch Galileo
+```board``` : Mã nguồn của bo mạch Arduino Uno R3
 ```libraries``` : Các thư viện ngoài được sử dụng
 ```test``` : Các đoạn mã dùng để kiểm tra tình trạng của từng thành phần trong sản phẩm

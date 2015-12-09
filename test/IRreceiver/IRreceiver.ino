@@ -1,5 +1,5 @@
-#include <IRremote1.h>
-const int receiverPin = 4;
+#include <IRremote.h>
+const int receiverPin = 8;
 IRrecv irrecv(receiverPin);
 decode_results results;
 void setup()
@@ -53,7 +53,7 @@ void translateIR()
     break;
     case 0xFFE21D: Serial.println("CH+");
     break;
-    case 0xFFFFFF: Serial.println("NHAN GIU");
+    case 0xFFFFFFFF: Serial.println("NHAN GIU");
     break;
   }
 }
@@ -62,7 +62,6 @@ void loop()
   if (irrecv.decode(&results))
   {
     translateIR();
-    //Serial.println("LOL");
     Serial.println(results.value,HEX);
     delay(100);
     irrecv.resume();

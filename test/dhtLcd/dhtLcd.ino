@@ -1,7 +1,7 @@
 #include <dht.h>
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
-#define DHTPIN 2
+#define DHTPIN 6
 dht DHT;
 LiquidCrystal_I2C lcd(0x27,20,4);
 byte degree[8] = {

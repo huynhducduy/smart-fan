@@ -7,11 +7,12 @@ unsigned long time2 = 0;
 int servoType = 1;
 void setup()
 {
-  servo.attach(3);
+  servo.attach(9);
+  Serial.begin(9600);
 }
 void loop()
 {
-  if ( (unsigned long) (millis() - time2) > 35) // 15ms/độ
+  if ( (unsigned long) (millis() - time2) > 35) // 35ms/độ
   {
     if (posSer1 == posSer2) // Nếu đứng im
     {
@@ -36,6 +37,7 @@ void loop()
       }
     } else // Quay từ trái - phải
     {
+      Serial.println(servo.read());
       pos--;
       servo.write(pos);
       if (pos <= posSer1)
