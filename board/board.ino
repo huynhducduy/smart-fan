@@ -6,11 +6,11 @@
 #include <IRremote.h>
 //--------------------------------------------------------------------------------------------------------------------
 #define relayPin1 A0 // Bơm - IN1
-#define relayPin2 A1 // Mạnh - IN2
+#define relayPin2 A1 // Yếu - IN2
 #define relayPin3 A2 // Trung Bình - IN3
-#define relayPin4 A3 // Yếu - IN4
+#define relayPin4 A3 // Mạnh - IN4
 // A4,A5: LCD
-#define pirPin5 0 // Nhìn từ sau quạt: 54321
+#define pirPin5 7 // Nhìn từ sau quạt: 54321
 #define pirPin4 1
 #define pirPin3 2
 #define pirPin2 3
@@ -105,9 +105,9 @@ void readSettings()
     eepromUpdate(7,1);
     eepromUpdate(8,70);
     eepromUpdate(9,0);
-    eepromUpdate(10,30);
+    eepromUpdate(10,25);
     eepromUpdate(11,27);
-    eepromUpdate(12,25);
+    eepromUpdate(12,30);
   }
   //--------------------------------------------------------------------------------------------------------------------
   servoType = EEPROM.read(1);
@@ -614,19 +614,19 @@ void handleButton()
     {
       switch (currentCursor)
       {
-        case 4: if (powerConfig1 < 60)
+        case 4: if (powerConfig1 < 60 && powerConfig1+1 < powerConfig2)
         {
           powerConfig1++;
           changeVal = 1;
         }
         break;
-        case 5: if (powerConfig2 < 60 && powerConfig2+1 < powerConfig1)
+        case 5: if (powerConfig2 < 60 && powerConfig2+1 < powerConfig3)
         {
           powerConfig2++;
           changeVal = 1;
         }
         break;
-        case 6: if (powerConfig3 < 60 && powerConfig3+1 < powerConfig2)
+        case 6: if (powerConfig3 < 60)
         {
           powerConfig3++;
           changeVal = 1;
@@ -745,19 +745,19 @@ void handleButton()
     {
       switch (currentCursor)
       {
-        case 4: if (powerConfig1 > 0 && powerConfig1-1 > powerConfig2)
+        case 4: if (powerConfig1 > 0)
         {
           powerConfig1--;
           changeVal = 1;
         }
         break;
-        case 5: if (powerConfig2 > 0 && powerConfig2-1 > powerConfig3)
+        case 5: if (powerConfig2 > 0 && powerConfig2-1 > powerConfig1)
         {
           powerConfig2--;
           changeVal = 1;
         }
         break;
-        case 6: if (powerConfig3 > 0)
+        case 6: if (powerConfig3 > 0 && powerConfig3-1 > powerConfig2)
         {
           powerConfig3--;
           changeVal = 1;
@@ -1055,6 +1055,12 @@ void ctrlLcd()
 	{
 	  LCD.print("Tat");
 	}
+        /* LCD.setCursor(15,0);
+        LCD.print(pirVal1);
+        LCD.print(pirVal2);
+        LCD.print(pirVal3);
+        LCD.print(pirVal4);
+        LCD.println(pirVal5); */
       break;
       case 2:
         LCD.setCursor(17,1);
@@ -1437,7 +1443,7 @@ void ctrlPump()
         {
           if (currentPump == 0)
           {
-            digitalWrite(relayPin1, LOW);
+            digitalWrite(relayPin1, HIGH);
             currentPump = 1;
             buzzerVal = 1;
           }
@@ -1446,7 +1452,7 @@ void ctrlPump()
         {
           if (currentPump == 1)
           {
-            digitalWrite(relayPin1, HIGH);
+            digitalWrite(relayPin1, LOW);
             currentPump = 0;
             buzzerVal = 1;
           }
@@ -1455,7 +1461,7 @@ void ctrlPump()
       {
         if (currentPump == 1)
         {
-          digitalWrite(relayPin1, HIGH);
+          digitalWrite(relayPin1, LOW);
           currentPump = 0;
           buzzerVal = 1;
         }
@@ -1466,14 +1472,14 @@ void ctrlPump()
       {
         if (currentPump == 0)
         {
-          digitalWrite(relayPin1, LOW);
+          digitalWrite(relayPin1, HIGH);
           currentPump = 1;
         }
       } else
       {
         if (currentPump == 1)
         {
-          digitalWrite(relayPin1, HIGH);
+          digitalWrite(relayPin1, LOW);
           currentPump = 0;
         }
       }
@@ -1481,7 +1487,7 @@ void ctrlPump()
   } else {
     if (currentPump == 1)
     {
-      digitalWrite(relayPin1, HIGH);
+      digitalWrite(relayPin1, LOW);
       currentPump = 0;
       buzzerVal = 1;
     }
@@ -1530,7 +1536,7 @@ void setup()
   digitalWrite(relayPin4, HIGH);
   digitalWrite(relayPin3, HIGH);
   digitalWrite(relayPin2, HIGH);
-  digitalWrite(relayPin1, HIGH);
+  digitalWrite(relayPin1, LOW);
   //--------------------------------------------------------------------------------------------------------------------
   LCD.init();
   LCD.backlight();
