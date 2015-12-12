@@ -8,9 +8,10 @@ Nước ta có khí hậu khắc nghiệt, thường xuyên thay đổi, gây kh
 
 Để giải quyết vấn đề trên, ý tưởng Quạt thông minh ra đời. Chiếc quạt vừa tích hợp các ưu điểm của các thiết bị hiện đại, đồng thời tiết kiệm điện và thân thiện với môi trường, thích hợp với các hộ gia đình nhỏ. 
 
-![Quạt thông minh](http://i.imgur.com/XyIbrzm.jpg)
+![Quạt thông minh](http://i.imgur.com/8QehENT.jpg)
 
-Các hình ảnh liên quan khác của sản phẩm có thể xem thêm ở: [Quạt thông minh's Imgur](http://imgur.com/a/tZUFA)
+
+Các hình ảnh liên quan khác của sản phẩm có thể xem thêm ở: [Quạt thông minh's Imgur](http://imgur.com/a/rCERQ)
 
 Thuyết minh chi tiết có thể xem ở: [Quạt thông minh's Drive](https://drive.google.com/file/d/0B1lZQd8-Yga_NTBJVVJTdGotNWs/view)
 
@@ -125,5 +126,7 @@ Trong tương lai nhóm sẽ khắc phục tất cả những mặt tồn tại 
 # Chú thích thư mục
 
 ```board``` : Mã nguồn của bo mạch Arduino Uno R3
+
 ```libraries``` : Các thư viện ngoài được sử dụng
+
 ```test``` : Các đoạn mã dùng để kiểm tra tình trạng của từng thành phần trong sản phẩm
