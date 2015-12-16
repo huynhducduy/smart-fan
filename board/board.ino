@@ -41,24 +41,8 @@
 //--------------------------------------------------------------------------------------------------------------------
 byte degree[8] = {0B01110,0B01010,0B01110,0B00000,0B00000,0B00000,0B00000,0B00000};
 byte cursor[8] = {0B00000,0B00000,0B01110,0B01110,0B01110,0B01110,0B00000,0B00000};
-byte downArrow[8] = {
-  0B00000,
-  0B00000,
-  0B00000,
-  0B11111,
-  0B01110,
-  0B00100,
-  0B00000,
-  0B00000};
-byte upArrow[8] = {
-  0B00000,
-  0B00000,
-  0B00100,
-  0B01110,
-  0B11111,
-  0B00000,
-  0B00000,
-  0B00000};
+byte downArrow[8] = {0B00000,0B00000,0B00000,0B11111,0B01110,0B00100,0B00000,0B00000};
+byte upArrow[8] = {0B00000,0B00000,0B00100,0B01110,0B11111,0B00000,0B00000,0B00000};
 int isEeprom,servoType,servo1,servo2,powerType,powerVal,pumpType,pumpConfig,pumpVal,powerConfig1,powerConfig2,powerConfig3,remoteVal,upBtnVal,downBtnVal,selectBtnVal,backBtnVal,pirVal1,pirVal2,pirVal3,pirVal4,pirVal5,ser1,ser2,posSer1,posSer2,pos,posEx,servoDir,serSpeed,buzzerVal,currentPage,currentCursor,changeCursor,changePage,changeVal,currentPower,currentPump,beginSerVal,chkDht,turnOffAfter,turnOnAfter,tem,hum;
 unsigned long time1,time2,time3,time4,time5,time6;
 //--------------------------------------------------------------------------------------------------------------------
