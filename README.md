@@ -1,6 +1,6 @@
 # Quạt thông minh
 
-**Quạt thông minh** là dự án tham gia cuộc thi **Sáng tạo khoa học kỹ thuật - ViSEF** do nhóm tác giả: **_Huỳnh Đức Duy, Nguyễn Hà Sinh_** - học sinh lớp **_11A5 trường THPT Chuyên Lê Quý Đôn, Đà Nẵng_** thực hiện
+**Quạt thông minh** là dự án tham gia cuộc thi **Sáng tạo thanh thiếu niên nhi đồng - Vifotec 2016** do nhóm tác giả: **_Huỳnh Đức Duy, Nguyễn Hà Sinh_** - học sinh lớp **_11A5 trường THPT Chuyên Lê Quý Đôn, Đà Nẵng_** thực hiện
 
 ## Giới thiệu
 
@@ -13,7 +13,7 @@ Nước ta có khí hậu khắc nghiệt, thường xuyên thay đổi, gây kh
 
 Các hình ảnh liên quan khác của sản phẩm có thể xem thêm ở: [Quạt thông minh's Imgur](http://imgur.com/a/rCERQ)
 
-Thuyết minh chi tiết có thể xem ở: [Quạt thông minh's Drive](https://drive.google.com/file/d/0B1lZQd8-Yga_NTBJVVJTdGotNWs/view)
+Thuyết minh chi tiết có thể xem ở: [Quạt thông minh's Drive](https://drive.google.com/open?id=0B1lZQd8-Yga_Uzd5N0d1UUxHUEU)
 
 ## Mô tả
 
