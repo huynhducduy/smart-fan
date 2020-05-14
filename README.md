@@ -10,6 +10,8 @@ Nước ta có khí hậu khắc nghiệt, thường xuyên thay đổi, gây kh
 
 ![Quạt thông minh](https://i.imgur.com/6yOKGKI.jpg)
 
+![Poster Quạt thông minh](https://raw.githubusercontent.com/huynhducduy/smart-fan/master/poster.min.png)
+
 
 Các hình ảnh liên quan khác của sản phẩm có thể xem thêm ở: [Quạt thông minh's Imgur](https://imgur.com/a/H4m3Dky)
 
