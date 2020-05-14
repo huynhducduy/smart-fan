@@ -8,12 +8,10 @@ Nước ta có khí hậu khắc nghiệt, thường xuyên thay đổi, gây kh
 
 Để giải quyết vấn đề trên, ý tưởng Quạt thông minh ra đời. Chiếc quạt vừa tích hợp các ưu điểm của các thiết bị hiện đại, đồng thời tiết kiệm điện và thân thiện với môi trường, thích hợp với các hộ gia đình nhỏ. 
 
-![Quạt thông minh](http://i.imgur.com/8QehENT.jpg)
+![Quạt thông minh](https://i.imgur.com/6yOKGKI.jpg)
 
 
-Các hình ảnh liên quan khác của sản phẩm có thể xem thêm ở: [Quạt thông minh's Imgur](http://imgur.com/a/rCERQ)
-
-Thuyết minh chi tiết có thể xem ở: [Quạt thông minh's Drive](https://drive.google.com/open?id=0B1lZQd8-Yga_Uzd5N0d1UUxHUEU)
+Các hình ảnh liên quan khác của sản phẩm có thể xem thêm ở: [Quạt thông minh's Imgur](https://imgur.com/a/H4m3Dky)
 
 ## Mô tả
 
